@@ -50,6 +50,10 @@ pool_r0 = oligo_pool(pool_size, k_simulation)
 # print(pool_r0[:5])
 # count the amount of sequences
 count_r0 = Counter(pool_r0)
+# room tempeture
+t = 298
+# gas content
+r = 8.314463
 # print(count_r0.most_common(10),len(count_r0))
 
 
@@ -68,7 +72,8 @@ gibbs_matrix = np.array([
     [-1.431632, -1.539663, 0.000000, -0.235633]])
 
 
-affinity = np.random.normal(loc=1, scale=0.1, size=pool_size)
+affinity = np.exp(-gibbs_matrix / (r * t ))
+print(affinity)
 pool = simulate_selex(pool_size, rounds, affinity)
 print(pool[:5,])
 
