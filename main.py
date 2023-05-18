@@ -1,5 +1,4 @@
 import random
-
 import numpy as np
 import itertools
 from affinity import affinity_to_probability
