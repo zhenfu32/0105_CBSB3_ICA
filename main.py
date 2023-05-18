@@ -27,9 +27,9 @@ if __name__ == "__main__":
     # the length of oligonucleotides (sequences)
     k = 15
     # the amount of oligonucleotides pool
-    S = 10000000
+    S = 100000000
     # the amount of targets
-    T = 100000
+    T = 1000000
     # the round of SELEX
     r = 3
 
